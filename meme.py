@@ -2,14 +2,12 @@ from flask import Flask, request, redirect, url_for, render_template, flash
 from werkzeug import secure_filename
 import os
 from db import table_meme
-from flask_login import LoginManager
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/imgs')
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask('meme')
-app.secret_key = 'some_secret'
 
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER

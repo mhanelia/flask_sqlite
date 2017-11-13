@@ -30,6 +30,42 @@
       {% block content %}
       {% endblock %}
     </div>
+    <div class="modal alerta" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"></button>
+        <button type="button" class="btn btn-primary"></button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   </body>
+  <script>
+  $(document).ready(function(){
+
+
+    $('#btn-apagar').click(function(){
+      var id = parseInt($(this).attr("data-id"));
+      $('.alerta .modal-title').text("Confimar exclusão:")
+      $('.alerta .modal-body p').text("Deseja apagar?")
+      $('.alerta .modal-footer button.btn-default').text("Fechar")
+      $('.alerta .modal-footer button.btn-primary')
+      .text("Apagar")
+      .click(function(){
+        window.location.href = "/apagar/" + id  ;
+      })
+
+      $('.alerta').modal();
+    })
+  })
+  </script>
 </html>
