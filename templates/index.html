@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<form method="get">
+<form method="POST">
 <div class='container '>
   <div class="row">
     <div class="col-md-12">
@@ -15,9 +15,10 @@
             <img  id="{{meme['id']}}" src="{{meme['path']}}" alt="">
             <br>
             <div class="">
+
                 <a href="/deslike/{{meme['id']}}"><input type="button" value="{{meme['deslike']}}" id="deslike" class="btn btn-danger"/></a>
                 <a href="/like/{{meme['id']}}"><input type="button" value="{{meme['like']}}" id="like" class="btn btn-success"/></a>
-                <a href="/apagar/{{meme['id']}}"><input type="button" value="Remover? " id="apagar" class="btn btn-info"/></a>
+                <a href="/apagar/{{meme['id']}}"><input type="button" value="Apagar" id="like" class="btn btn-info"/></a>
               </button>
             </div>
 

@@ -63,6 +63,7 @@ def deslike(id):
 @app.route('/apagar/<id>', methods=['GET'])
 def delete(id):
     if request.method == 'GET':
+        dados_dict = request.form.to_dict()
         table_meme.delete(id=id)
 
         return redirect(url_for('index'))
