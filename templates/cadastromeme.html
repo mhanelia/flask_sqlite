@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<form  method="POST" action="/upload" enctype="multipart/form-data">
+  <div class="row form-group">
+      <div class="col-sm-12" style="text-align:center">
+          <h3 style=""> Cadastro Memeano </h3>
+      </div>
+  </div>
+  <hr>
+  <div class="row form-group">
+    <div class="col-sm-6">
+        <label>Descricao</label><input type="text" class="form-control" name="meme_desc" id="meme_desc">
+    </div>
+    <div class="col-sm-6">
+        <label>Imagem</label><input type="file" class="form-control" name="inputFile" id="meme_desc">
+    </div>
+  </div>
+  <hr>
+  <div class="row form-group">
+      <button class="btn btn-success" type="submit">Enviar</button>
+  </div>
+</form>
+
+
+{% endblock %}

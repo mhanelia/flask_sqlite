@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<form method="get">
+<div class='container '>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+{% for meme in memes%}
+        <div class="col-md-3">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>{{meme["meme_desc"]}}</h3>
+            </div>
+            <img  id="{{meme['id']}}" src="{{meme['path']}}" alt="">
+            <br>
+            <div class="">
+
+                <a href="/deslike/{{meme['id']}}"><input type="button" value="{{meme['deslike']}}" id="deslike" class="btn btn-danger"/></a>
+                <a href="/like/{{meme['id']}}"><input type="button" value="{{meme['like']}}" id="like" class="btn btn-success"/></a>
+                <!-- <i class="fa fa-thumbs-down"> -->
+
+
+
+              </button>
+
+
+            </div>
+          </div>
+        </div>
+
+
+
+{%endfor%}
+</div>
+
+</div>
+</div>
+
+
+</div>
+</form>
+{% endblock %}
